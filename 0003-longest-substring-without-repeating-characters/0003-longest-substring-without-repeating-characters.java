@@ -10,6 +10,9 @@ class Solution {
                     break;
                 }
             }
+            if(len==s.length()){
+                return len;
+            }
             if(len<hm.size()){
                 len=hm.size();
             }
