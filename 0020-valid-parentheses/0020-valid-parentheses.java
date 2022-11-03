@@ -5,33 +5,36 @@ class Solution {
             char ch = s.charAt(i);
             if(ch == '(' || ch == '{' || ch =='['){
                 stack.push(ch);
-            }else if(stack.empty()){
-                return false;
-            }
-            switch(ch){
-                case ')':
-                    if(stack.peek()=='('){
-                        stack.pop();
-                    }else{
-                        return false;
-                    }
-                    break;
-                case '}':
-                    if(stack.peek()=='{'){
-                        stack.pop();
-                    }else{
-                        return false;
-                    }
-                    break;
-                case ']':
-                    if(stack.peek()=='['){
-                        stack.pop();
-                    }else{
-                        return false;
-                    }
-                    break;
+            }else {
+                if(stack.empty()){
+                    return false;
+                }
+                switch(ch){
+                    case ')':
+                        if(stack.peek()=='('){
+                            stack.pop();
+                        }else{
+                            return false;
+                        }
+                        break;
+                    case '}':
+                        if(stack.peek()=='{'){
+                            stack.pop();
+                        }else{
+                            return false;
+                        }
+                        break;
+                    case ']':
+                        if(stack.peek()=='['){
+                            stack.pop();
+                        }else{
+                            return false;
+                        }
+                        break;
+                }
             }
         }
+            
         if(stack.empty()){
             return true;
         }
