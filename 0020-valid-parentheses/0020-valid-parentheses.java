@@ -14,32 +14,17 @@ class Solution {
                     stack.push(ch);
                     break;
                 case ')':
-                    if(stack.empty()){
-                        return false;
-                    }
-                    if(stack.peek()=='('){
-                        stack.pop();
-                    }else{
+                    if(stack.empty() || stack.pop()!='('){
                         return false;
                     }
                     break;
                 case '}':
-                    if(stack.empty()){
-                        return false;
-                    }
-                    if(stack.peek()=='{'){
-                        stack.pop();
-                    }else{
+                    if(stack.empty() || stack.pop()!='{'){
                         return false;
                     }
                     break;
                 case ']':
-                    if(stack.empty()){
-                        return false;
-                    }
-                    if(stack.peek()=='['){
-                        stack.pop();
-                    }else{
+                    if(stack.empty() || stack.pop()!='['){
                         return false;
                     }
                     break;
