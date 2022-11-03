@@ -2,16 +2,16 @@ class Solution {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<Character>();
         for(int i=0;i<s.length();i++){
-            char ch = s.charAt(i);
-            switch(ch){
+            // char ch = s.charAt(i);
+            switch(s.charAt(i)){
                 case '(':
-                    stack.push(ch);
+                    stack.push(s.charAt(i));
                     break;
                 case '{':
-                    stack.push(ch);
+                    stack.push(s.charAt(i));
                     break;
                 case '[':
-                    stack.push(ch);
+                    stack.push(s.charAt(i));
                     break;
                 case ')':
                     if(stack.empty() || stack.pop()!='('){
