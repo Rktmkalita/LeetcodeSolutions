@@ -30,7 +30,7 @@ class Solution {
                     break;
             }
         }
-        if(stack.size() == 0){
+        if(stack.empty()){
             return true;
         }
         return false;
