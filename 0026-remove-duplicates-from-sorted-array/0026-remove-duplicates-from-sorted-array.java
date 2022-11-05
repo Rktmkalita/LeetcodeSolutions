@@ -16,14 +16,5 @@ class Solution {
         }
         Arrays.sort(nums);
         return nums.length-k;
-            // if(nums[i]==nums[i+1]){
-            //     for(int j=i;j<nums.length-1-k;j++){
-            //         nums[j]=nums[j+1];
-            //     }
-            //     k++;
-            //     i--;
-            // }
-        // }
-        // return nums.length-k;
     }
 }
