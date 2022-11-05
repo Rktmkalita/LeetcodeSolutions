@@ -13,13 +13,6 @@ class Solution {
                     break;
                 }
             }
-            // if(nums[i]==nums[i+1]){
-            //     for(int j=i;j<nums.length-1-k;j++){
-            //         nums[j]=nums[j+1];
-            //     }
-            //     k++;
-            //     i--;
-            // }
         }
         Arrays.sort(nums);
         return nums.length-k;
