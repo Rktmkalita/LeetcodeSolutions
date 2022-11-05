@@ -9,6 +9,8 @@ class Solution {
                 if(nums[i]==nums[j]){
                     nums[j]=Integer.MAX_VALUE;
                     k++;
+                }else{
+                    break;
                 }
             }
         }
