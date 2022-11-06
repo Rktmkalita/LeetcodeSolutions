@@ -9,16 +9,11 @@ class Solution {
             return n;
         }
         
-        for(int i=0;i<n;i++){
-            if(nums[i]==target){
-                return i;
-            }
-            if(nums[i]>target){
+        for(int i=1;i<n;i++){
+            if(nums[i]==target || nums[i]>target){
                 return i;
             }
         }
-        
         return n;
     }
-    
 }
