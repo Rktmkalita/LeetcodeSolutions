@@ -10,7 +10,7 @@ class Solution {
         }
         
         for(int i=1;i<n;i++){
-            if(nums[i]==target || nums[i]>target){
+            if(nums[i]>=target){
                 return i;
             }
         }
