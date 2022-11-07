@@ -4,15 +4,15 @@ class Solution {
             return x;
         }
             
-        double temp, squareroot;
+        double temp, sqrroot;
 		
-		squareroot = x / 2;
+		sqrroot = x / 2;
 		
 		do {
-			temp = squareroot;
-			squareroot = (temp + (x / temp))/2;
-		} while((temp - squareroot) != 0);
+			temp = sqrroot;
+			sqrroot = (temp + (x / temp))/2;
+		} while((temp - sqrroot) != 0);
         
-        return (int)squareroot;
+        return (int)sqrroot;
     }
 }
