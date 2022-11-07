@@ -17,7 +17,10 @@ class Solution {
             sb.append(sum % 2);
             carry = sum / 2;
         }
-        if (carry != 0) sb.append(carry);
+        if (carry != 0) {
+            sb.append(carry);
+        }
+        
         return sb.reverse().toString();
     }
 }
