@@ -1,10 +1,11 @@
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        int i=0,j=0,k=0;
+        int j=0,k=0;
         int[] arr=new int[m+n];
-        for(int ai=0;ai<m;ai++){
-            arr[ai]=nums1[ai];
+        for(int i=0;i<m;i++){
+            arr[i]=nums1[i];
         }
+        int i=0;
         while(i<m || j<n){
             if(i==m){
                 nums1[k]=nums2[j];
