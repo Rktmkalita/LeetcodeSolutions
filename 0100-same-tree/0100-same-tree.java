@@ -14,22 +14,14 @@
  * }
  */
 class Solution {
-    private Boolean flag=true;
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        inorder(p,q);
-        return flag;
-    }
-    public void inorder(TreeNode pnode,TreeNode qnode){
-        if((pnode==null && qnode!=null) || (pnode!=null && qnode==null)){
-            flag=false;
-            return;
-        }else if(pnode!=null && qnode!=null){
-            inorder(pnode.left,qnode.left);
-            if(pnode.val!=qnode.val){
-                flag=false;
-            }
-            inorder(pnode.right,qnode.right);
-        }
+        if (p == null && q == null) return true;
+        if (p == null || q == null) return false;
         
+        if (p.val != q.val) return false;
+        
+        boolean left = isSameTree(p.left,q.left);
+        boolean right = isSameTree(p.right,q.right);
+        return left && right;
     }
 }
