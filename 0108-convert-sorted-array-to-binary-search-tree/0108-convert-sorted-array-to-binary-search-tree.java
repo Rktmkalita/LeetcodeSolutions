@@ -18,12 +18,18 @@ class Solution {
         if(nums.length==0){
             return null;
         }
-        int mid=nums.length/2;
-        TreeNode node = new TreeNode(nums[mid]);
         
-        node.left=sortedArrayToBST(Arrays.copyOfRange(nums, 0, mid));
-        node.right=sortedArrayToBST(Arrays.copyOfRange(nums, mid+1, nums.length));
-        return node;
+        return arraytree(nums,0,nums.length-1);
     }
     
+    public TreeNode arraytree(int[] nums, int left, int right) {
+        if(left>right){
+            return null;
+        }
+        int mid = (left+right)/2;
+        TreeNode node = new TreeNode(nums[mid]);
+        node.left = arraytree(nums,left,mid-1);
+        node.right = arraytree(nums,mid+1,right);
+        return node;
+    }
 }
