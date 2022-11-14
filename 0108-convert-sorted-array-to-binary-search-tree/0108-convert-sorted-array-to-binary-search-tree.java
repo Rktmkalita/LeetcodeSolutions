@@ -25,4 +25,5 @@ class Solution {
         node.right=sortedArrayToBST(Arrays.copyOfRange(nums, mid+1, nums.length));
         return node;
     }
+    
 }
