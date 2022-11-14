@@ -15,10 +15,6 @@
  */
 class Solution {
     public TreeNode sortedArrayToBST(int[] nums) {
-        if(nums.length==0){
-            return null;
-        }
-        
         return arraytree(nums,0,nums.length-1);
     }
     
