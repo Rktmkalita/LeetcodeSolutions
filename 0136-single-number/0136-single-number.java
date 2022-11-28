@@ -1,13 +1,15 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        Set<Integer> numSet = new HashSet<Integer>();
+        int sum=0;
+        Set<Integer> set = new HashSet<Integer>();
         for(int i:nums){
-            if(!numSet.contains(i)){
-                numSet.add(i);
+            if(!set.contains(i)){
+                set.add(i);
+                sum+=i;
             }else{
-                numSet.remove(i);
+                sum-=i;
             }
         }
-        return numSet.iterator().next();
+        return sum;
     }
 }
