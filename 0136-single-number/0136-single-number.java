@@ -7,6 +7,7 @@ class Solution {
                 set.add(i);
                 sum+=i;
             }else{
+                set.remove(i);
                 sum-=i;
             }
         }
