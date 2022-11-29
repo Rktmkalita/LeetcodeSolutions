@@ -20,11 +20,10 @@ class Solution {
         return list;
     }
     public void traverse(TreeNode root, List<Integer> list){
-        if(root==null){
-            return;
+        if(root!=null){
+            traverse(root.left,list);
+            traverse(root.right,list);
+            list.add(root.val);
         }
-        traverse(root.left,list);
-        traverse(root.right,list);
-        list.add(root.val);
     }
 }
