@@ -14,7 +14,6 @@ class Solution {
             if(pos==0){
                 columnNumber--;
             }
-             System.out.println(pos+" "+str);
         }
         return str.reverse().toString();
     }
