@@ -1,6 +1,8 @@
 class Solution {
     public String convertToTitle(int columnNumber) {
-        StringBuilder str = new StringBuilder();
+        if (columnNumber >= 1 && columnNumber <= 26)
+            return String.valueOf((char)(columnNumber + 64));
+        StringBuilder str = new StringBuilder();    
         while(columnNumber>0){
             int pos=columnNumber%26;
             if(pos!=0){
