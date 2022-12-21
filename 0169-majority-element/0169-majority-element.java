@@ -12,9 +12,6 @@ class Solution {
                 maxKey=i;
                 maxVal=map.get(i);
             }
-            if(maxVal>nums.length/2){
-                return maxKey;
-            }
         }
         return maxKey;
     }
