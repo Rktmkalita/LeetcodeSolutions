@@ -3,7 +3,7 @@ class Solution {
         String str="";
         if(num>=1000){
             int count=num/1000;
-            for(int i=0;i<count;i++){
+            while(count-->0){
                 str+="M";
             }
             num=num%1000;
@@ -14,7 +14,7 @@ class Solution {
                 str+="CM";
             }else{
                 str+="D";
-                for(int i=0;i<count;i++){
+                while(count-->0){
                     str+="C";
                 }
             }
@@ -25,7 +25,7 @@ class Solution {
             if(count==4){
                 str+="CD";
             }else{
-                for(int i=0;i<count;i++){
+                while(count-->0){
                     str+="C";
                 }
             }
@@ -37,7 +37,7 @@ class Solution {
                 str+="XC";
             }else{
                 str+="L";
-                for(int i=0;i<count;i++){
+                while(count-->0){
                     str+="X";
                 }
             }
@@ -48,7 +48,7 @@ class Solution {
             if(count==4){
                 str+="XL";
             }else{
-                for(int i=0;i<count;i++){
+                while(count-->0){
                     str+="X";
                 }
             }
@@ -60,7 +60,7 @@ class Solution {
                 str+="IX";
             }else{
                 str+="V";
-                for(int i=0;i<count;i++){
+                while(count-->0){
                     str+="I";
                 }
             }
@@ -69,7 +69,7 @@ class Solution {
         if(num==4){
             str+="IV";
         }else{
-            for(int i=0;i<num;i++){
+            while(num-->0){
                 str+="I";
             }
         }
