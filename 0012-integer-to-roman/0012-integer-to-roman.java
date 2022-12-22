@@ -1,21 +1,21 @@
 class Solution {
     public String intToRoman(int num) {
-        String str="";
+        StringBuilder str= new StringBuilder();
         if(num>=1000){
             int count=num/1000;
             while(count-->0){
-                str+="M";
+                str.append("M");
             }
             num=num%1000;
         }
         if(num>=500){
             int count=(num/100)-5;
             if(count==4){
-                str+="CM";
+                str.append("CM");
             }else{
-                str+="D";
+                str.append("D");
                 while(count-->0){
-                    str+="C";
+                    str.append("C");
                 }
             }
             num=num%100;
@@ -23,10 +23,10 @@ class Solution {
         if(num>=100){
             int count=(num/100);
             if(count==4){
-                str+="CD";
+                str.append("CD");
             }else{
                 while(count-->0){
-                    str+="C";
+                    str.append("C");
                 }
             }
             num=num%100;
@@ -34,11 +34,11 @@ class Solution {
         if(num>=50){
             int count=(num/10)-5;
             if(count==4){
-                str+="XC";
+                str.append("XC");
             }else{
-                str+="L";
+                str.append("L");
                 while(count-->0){
-                    str+="X";
+                    str.append("X");
                 }
             }
             num=num%10;
@@ -46,10 +46,10 @@ class Solution {
         if(num>=10){
             int count=(num/10);
             if(count==4){
-                str+="XL";
+                str.append("XL");
             }else{
                 while(count-->0){
-                    str+="X";
+                    str.append("X");
                 }
             }
             num=num%10;
@@ -57,22 +57,22 @@ class Solution {
         if(num>=5){
             int count=num-5;
             if(count==4){
-                str+="IX";
+                str.append("IX");
             }else{
-                str+="V";
+                str.append("V");
                 while(count-->0){
-                    str+="I";
+                    str.append("I");
                 }
             }
-            return str;
+            return str.toString();
         }
         if(num==4){
-            str+="IV";
+            str.append("IV");
         }else{
             while(num-->0){
-                str+="I";
+                str.append("I");
             }
         }
-        return str;
+        return str.toString();
     }
 }
