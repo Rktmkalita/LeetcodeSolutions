@@ -5,8 +5,10 @@ class Solution {
         int pos=0;
         for(int i=0;i<s.length();i++){
             int flag=0;
+            char sch=s.charAt(i);
             for(int j=pos;j<t.length();j++){
-                if(s.charAt(i)==t.charAt(j)){
+                char tch=t.charAt(j);
+                if(sch==tch){
                     flag=1;
                     pos=j+1;
                     break;
