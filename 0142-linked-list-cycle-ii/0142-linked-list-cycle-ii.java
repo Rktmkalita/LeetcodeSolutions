@@ -14,13 +14,20 @@ public class Solution {
         if(head==null || head.next==null){
             return null;
         }
-        Set<ListNode> set = new HashSet<ListNode>();
-        while(head.next!=null){
-            if(set.contains(head)){
-                return head;   
+        ListNode current=head;
+        ListNode fast=head;
+        while(fast!=null && fast.next!=null){
+            current=current.next;
+            fast=fast.next.next;
+            if(current==fast){
+                System.out.println(current.val);
+                current=head;
+                while(current!=fast){
+                    current=current.next;
+                    fast=fast.next;
+                }
+                return current;
             }
-            set.add(head);
-            head=head.next;
         }
         return null;
     }
