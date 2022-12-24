@@ -20,7 +20,6 @@ public class Solution {
             current=current.next;
             fast=fast.next.next;
             if(current==fast){
-                System.out.println(current.val);
                 current=head;
                 while(current!=fast){
                     current=current.next;
