@@ -16,9 +16,7 @@ class Solution {
             size++;
             current=current.next;
         }
-        System.out.println(size);
         size=size/2 + 1;
-        System.out.println("After"+size);
         while(size!=1){
             head=head.next;
             size--;
