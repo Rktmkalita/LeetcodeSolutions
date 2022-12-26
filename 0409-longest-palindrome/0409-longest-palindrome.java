@@ -1,11 +1,11 @@
 class Solution {
     public int longestPalindrome(String s) {
         int arr[]=new int[256];
-        for(int i=0;i<s.length();i++){
-            arr[s.charAt(i)]++;
+        int count=0,i=0;
+        while(i<s.length()){
+            arr[s.charAt(i++)]++;
         }
-        int count=0;
-        for(int i=0;i<256;i++){
+        for(i=0;i<256;i++){
             arr[i]=arr[i]/2;
             if(arr[i]!=0){
                 count+=arr[i]*2;
