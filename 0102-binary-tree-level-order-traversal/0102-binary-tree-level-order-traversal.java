@@ -20,7 +20,7 @@ class Solution {
             return list;
         }
         Queue<TreeNode>q = new LinkedList<>();
-        q.offer(root);
+        q.add(root);
         
         while(!q.isEmpty()){
             List<Integer>l = new ArrayList<>();
