@@ -29,10 +29,10 @@ class Solution {
                 TreeNode node = q.poll();
                 l.add(node.val);
                 if(node.left!=null){
-                    q.offer(node.left);
+                    q.add(node.left);
                 }
                 if(node.right!=null){
-                    q.offer(node.right);
+                    q.add(node.right);
                 }
             }
             list.add(l);
