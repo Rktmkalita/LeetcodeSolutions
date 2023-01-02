@@ -1,8 +1,8 @@
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
-        if(p.length()>s.length())
-            return new ArrayList<>();
         List<Integer> list=new ArrayList<>();
+        if(p.length()>s.length())
+            return list;
         char ptempArray[] = p.toCharArray();
         Arrays.sort(ptempArray);
         String psort=new String(ptempArray);
