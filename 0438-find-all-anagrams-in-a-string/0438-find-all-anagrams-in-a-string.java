@@ -3,16 +3,24 @@ class Solution {
         List<Integer> list=new ArrayList<>();
         if(p.length()>s.length())
             return list;
-        char ptempArray[] = p.toCharArray();
-        Arrays.sort(ptempArray);
-        String psort=new String(ptempArray);
+        int[] pcount=new int[26];
+        for(char ch:p.toCharArray()){
+            pcount[ch-'a']++;
+        }
         for(int i=0;i<=s.length()-p.length();i++){
-            char stempArray[] = s.substring(i,p.length()+i).toCharArray();
-            Arrays.sort(stempArray);
-            String str=new String(stempArray);
-            if(str.equals(psort)){
-                list.add(i);
+            int[] scount=new int[26];
+            boolean flag=true;
+            for(char ch:s.substring(i,p.length()+i).toCharArray()){
+                scount[ch-'a']++;
             }
+            for(int j=0;j<26;j++){
+                if(scount[j]!=pcount[j]){
+                    flag=false;
+                    break;
+                }
+            }
+            if(flag==true)
+                list.add(i);
         }
         return list;
     }
