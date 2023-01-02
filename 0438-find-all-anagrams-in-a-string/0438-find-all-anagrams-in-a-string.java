@@ -1,10 +1,10 @@
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
-        if(s.length() < p.length()){
-            return new LinkedList<>();
-        }
-
         List<Integer> result = new LinkedList<>();
+        if(s.length() < p.length()){
+            return result;
+        }
+        
         int left = 0;
         int right = p.length() - 1;
 
