@@ -1,6 +1,6 @@
 class Solution {
     public List<Integer> findAnagrams(String s, String p) {
-        List<Integer> list=new LinkedList<>();
+        List<Integer> list=new ArrayList<>();
         if(p.length()>s.length())
             return list;
         int[] pcount=new int[26];
