@@ -10,7 +10,6 @@ class Solution {
                 sumMax=sum;
             }
         }
-        
         return sumMax;
     }
 }
