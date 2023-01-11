@@ -16,8 +16,8 @@ class Solution {
             size++;
             current=current.next;
         }
-        size=size/2 + 1;
-        while(size!=1){
+        size=size/2;
+        while(size!=0){
             head=head.next;
             size--;
         }
