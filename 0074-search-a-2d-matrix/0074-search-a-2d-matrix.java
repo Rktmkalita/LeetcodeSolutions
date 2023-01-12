@@ -5,8 +5,8 @@ class Solution {
         int left=0;
         int right=m*n-1;
         while(left<=right){
-            // int mid=(left+right)/2;
-            int mid=(left+(right-left)/2);
+            int mid=(left+right)/2;
+            // int mid=(left+(right-left)/2);
             int val=matrix[(mid)/n][(mid)%n];
             if(target==val){
                 return true;
