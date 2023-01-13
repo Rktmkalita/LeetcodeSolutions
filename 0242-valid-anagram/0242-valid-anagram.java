@@ -11,10 +11,6 @@ class Solution {
                 return false;
             counter[ch-'a']--;
         }
-        for(int i=0;i<26;i++){
-            if(counter[i]!=0)
-                return false;
-        }
         return true;
     }
 }
