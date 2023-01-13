@@ -2,7 +2,7 @@ class Solution {
     public boolean isAnagram(String s, String t) {
         if(s.length()!=t.length())
             return false;
-        char[] counter = new char[26];
+        int[] counter = new int[26];
         for(char ch:s.toCharArray()){
             counter[ch-'a']++;
         }
