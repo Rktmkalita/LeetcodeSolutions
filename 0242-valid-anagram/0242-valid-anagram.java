@@ -11,8 +11,8 @@ class Solution {
                 return false;
             counter[ch-'a']--;
         }
-        for(char ch='a';ch<='z';ch++){
-            if(counter[ch-'a']!=0)
+        for(int i=0;i<26;i++){
+            if(counter[i]!=0)
                 return false;
         }
         return true;
