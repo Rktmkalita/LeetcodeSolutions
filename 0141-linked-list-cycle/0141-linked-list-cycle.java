@@ -22,12 +22,9 @@ public class Solution {
             fast_p = fast_p.next.next;
             if (slow_p == fast_p) {
                 flag = 1;
-                break;
+                return true;
             }
         }
-        if (flag == 1)
-            return true;
-        else
-            return false;
+        return false;
     }
 }
