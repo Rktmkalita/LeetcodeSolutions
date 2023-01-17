@@ -1,30 +1,22 @@
 class Solution {
-    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
-        if(image[sr][sc]==color){
+    public int[][] floodFill(int[][] image, int row, int col, int color) {
+        if(row<0 || col<0 || row>=image.length || col>=image[0].length || image[row][col]==color){
             return image;
         }
-        int temp=image[sr][sc];
-        image[sr][sc]=color;
-        if(sr-1>=0){
-            if(image[sr-1][sc]==temp){
-                floodFill(image,sr-1,sc,color);
-            }
-        }
-        if(sr+1<image.length){
-            if(image[sr+1][sc]==temp){
-                floodFill(image,sr+1,sc,color);
-            }
-        }
-        if(sc-1>=0){
-            if(image[sr][sc-1]==temp){
-                floodFill(image,sr,sc-1,color);
-            }
-        }
-        if(sc+1<image[0].length){
-            if(image[sr][sc+1]==temp){
-                floodFill(image,sr,sc+1,color);
-            }
-        }
+        dfs(image,row,col,color,image[row][col]);
         return image;
+    }
+    private void dfs(int[][] image, int row, int col, int color,int check){
+        if(row<0 || col<0 || row>=image.length || col>=image[0].length || image[row][col]==color){
+            return;
+        }
+        if(image[row][col]==check)
+            image[row][col]=color;
+        else
+            return;
+        dfs(image,row-1,col,color,check);
+        dfs(image,row+1,col,color,check);
+        dfs(image,row,col-1,color,check);
+        dfs(image,row,col+1,color,check);
     }
 }
