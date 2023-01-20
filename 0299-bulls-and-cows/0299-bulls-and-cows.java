@@ -3,11 +3,7 @@ class Solution {
         int bull=0,cow=0;
         Map<Character,Integer> map = new HashMap<>();
         for(char ch:secret.toCharArray()){
-            if(map.containsKey(ch)){
-                map.put(ch,map.get(ch)+1);
-            }else{
-                map.put(ch,1);
-            }
+            map.put(ch,map.getOrDefault(ch,0)+1);
         }
         char[] guessArr = guess.toCharArray();
         for(int i=0;i<guess.length();i++){
