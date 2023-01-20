@@ -35,26 +35,4 @@ class Solution {
         
         return hasPathSum(root.right,targetSum) || hasPathSum(root.left,targetSum);
     }
-    
-    boolean traverseSum(TreeNode root, int targetSum) {
-        if(root==null){
-            return false;
-        }
-        
-        targetSum-=root.val;
-        
-        if(root.left==null && root.right==null && targetSum==0){
-            return true;
-        }
-        
-        if(root.left==null && targetSum!=0){
-            return traverseSum(root.right,targetSum);
-        }
-        
-        if(root.right==null && targetSum!=0){
-            return traverseSum(root.left,targetSum);
-        }
-        
-        return traverseSum(root.right,targetSum) || traverseSum(root.left,targetSum);
-    }
 }
