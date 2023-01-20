@@ -17,21 +17,19 @@ class Solution {
     public TreeNode invertTree(TreeNode root) {
         if(root==null)
             return root;
-        helper(root);
+        helper(root,root.left,root.right);
         return root;
     }
-    public void helper(TreeNode root){
-        if(root.left==null && root.right==null)
+    public void helper(TreeNode root,TreeNode left,TreeNode right){
+        if(left==null && right==null)
             return;
-        TreeNode temp = root.left;
-        root.left=root.right;
-        root.right=temp;
-        if(root.left!=null){
-            helper(root.left);
+        root.left=right;
+        root.right=left;
+        if(left!=null){
+            helper(left,left.left,left.right);
         }
-        if(root.right!=null){
-            helper(root.right);
+        if(right!=null){
+            helper(right,right.left,right.right);
         }
     }
-    
 }
