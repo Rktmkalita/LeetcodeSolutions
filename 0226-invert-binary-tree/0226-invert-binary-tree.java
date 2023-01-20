@@ -23,9 +23,6 @@ class Solution {
     public void helper(TreeNode root,TreeNode left,TreeNode right){
         if(left==null && right==null)
             return;
-        // TreeNode temp = left;
-        // left=right;
-        // right=temp;
         root.left=right;
         root.right=left;
         if(left!=null){
