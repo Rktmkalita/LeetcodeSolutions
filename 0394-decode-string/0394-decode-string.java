@@ -18,8 +18,12 @@ class Solution {
             } else if (ch == ']') {
                 StringBuilder tmp = cur;
                 cur = strStack.pop();
-                for (k = intStack.pop(); k > 0; --k) cur.append(tmp);
-            } else cur.append(ch);
+                for (k = intStack.pop(); k > 0; --k) {
+                    cur.append(tmp);
+                }
+            } else {
+                cur.append(ch);
+            }
         }
         return cur.toString();
     }
