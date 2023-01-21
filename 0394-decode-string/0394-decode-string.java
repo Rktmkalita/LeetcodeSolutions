@@ -3,37 +3,24 @@ class Solution {
         if (s == null || s.length() == 0) {
             return s;
         }
-        Stack<Integer> countStack = new Stack<>();
-        Stack<String> resultStack = new Stack<>();
-        char[] strArr = s.toCharArray();
-        int count = 0;
-        String curResult = "";
-        for (int i = 0; i < s.length(); i++) {
-            //calculate repeat number
-            if (Character.isDigit(strArr[i])) {
-                count = count * 10 + (strArr[i] - '0');
-            }
-            //push previous decoded string into stack
-            else if (strArr[i] == '[') {
-                countStack.push(count);
-                resultStack.push(curResult);
-                count = 0;
-                curResult = "";
-            }
-            //start to decode current string
-            else if (strArr[i] == ']') {
-                int repeat = countStack.pop();
-                StringBuilder temp = new StringBuilder(resultStack.pop());
-                for (int j = 0; j < repeat; j++) {
-                    temp.append(curResult);
-                }
-                curResult = temp.toString();
-            }
-            //normal character, concat to current string, preparing for decoding
-            else {
-                curResult += strArr[i];
-            }
+        Stack<Integer> intStack = new Stack<>();
+        Stack<StringBuilder> strStack = new Stack<>();
+        StringBuilder cur = new StringBuilder();
+        int k = 0;
+        for (char ch : s.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                k = k * 10 + ch - '0';
+            } else if ( ch == '[') {
+                intStack.push(k);
+                strStack.push(cur);
+                cur = new StringBuilder();
+                k = 0;
+            } else if (ch == ']') {
+                StringBuilder tmp = cur;
+                cur = strStack.pop();
+                for (k = intStack.pop(); k > 0; --k) cur.append(tmp);
+            } else cur.append(ch);
         }
-        return curResult;
+        return cur.toString();
     }
 }
