@@ -16,7 +16,6 @@ class Solution {
                 str+=ch;
             }
         }
-        System.out.println(str);
         return str;
     }
 }
