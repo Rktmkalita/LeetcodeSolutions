@@ -9,7 +9,6 @@
  */
 
 class Solution {
-    TreeNode parent;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         int small = p.val<q.val?p.val:q.val;
         int large = p.val>q.val?p.val:q.val;
