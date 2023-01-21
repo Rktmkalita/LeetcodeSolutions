@@ -18,11 +18,9 @@ class Solution {
             } else if (ch == ']') {
                 StringBuilder tmp = cur;
                 cur = strStack.pop();
-                int n = intStack.pop();
-                for (k = 1; k <= n; ++k) {
+                for (k = intStack.pop(); k > 0; --k) {
                     cur.append(tmp);
                 }
-                k=0;
             } else {
                 cur.append(ch);
             }
