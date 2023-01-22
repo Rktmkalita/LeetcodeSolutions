@@ -3,28 +3,18 @@ class Solution {
         if(words.length==1)
             return Arrays.asList(words);
         
-        List<String> list=new ArrayList<>();
+        Map<String, Integer> map = new HashMap<>();
+        for (String word : words) 
+            map.put(word, map.getOrDefault(word, 0)+1);
         
-        Map<String,Integer> map=new HashMap<>();
-        for(String str:words){
-            map.put(str,map.getOrDefault(str,0)+1);
-        }
+        PriorityQueue<String> pq = new PriorityQueue<>((a, b) -> map.get(a) == map.get(b) ? a.compareTo(b) : map.get(b) - map.get(a));
         
-        List<Map.Entry<String, Integer>> temp = new LinkedList<Map.Entry<String, Integer>>(map.entrySet());
-        temp.sort((a,b)->{
-            int x=-a.getValue().compareTo(b.getValue());
-            if(x==0){
-                return a.getKey().compareTo(b.getKey());
-            }else{
-                return x;
-            }
-        });
-        for(Map.Entry<String, Integer> e:temp){
-            list.add(e.getKey());
-            k--;
-            if(k==0)
-                break;
-        }
-        return list;
+        for (String key : map.keySet())
+            pq.add(key);
+        
+        List<String> res = new ArrayList<>();
+        for (int i = 0; i < k; i++) 
+            res.add(pq.poll());
+        return res;
     }
 }
