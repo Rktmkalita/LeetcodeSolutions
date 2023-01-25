@@ -7,7 +7,7 @@ class Solution {
             if(sum==target){
                 res[0]=i+1;
                 res[1]=j+1;
-                break;
+                return res;
             }else if(sum<target){
                 i++;
             }else{
