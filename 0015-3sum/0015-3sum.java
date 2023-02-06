@@ -12,8 +12,8 @@ class Solution {
                     if(i!=j && j!=k && k!=i){
                         List<Integer> temp = new ArrayList<>();
                         temp.add(nums[i]);
-                        temp.add(nums[j]);
                         temp.add(complement);
+                        temp.add(nums[j]);
                         Collections.sort(temp);
                         set.add(temp);
                     }
