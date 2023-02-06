@@ -1,26 +1,42 @@
+import java.util.AbstractList;
 class Solution {
+    private List<List<Integer>> res;
     public List<List<Integer>> threeSum(int[] nums) {
-        Set<List<Integer>> set = new HashSet<>();
-        int n=nums.length;
-        for(int i=0;i<n;i++){
-            int target = -nums[i];
-            Map<Integer,Integer> map = new HashMap<>();
-            for(int j=i;j<n;j++){
-                int complement = target - nums[j];
-                if (map.containsKey(complement)) {
-                    int k=map.get(complement);
-                    if(i!=j && j!=k && k!=i){
-                        List<Integer> temp = new ArrayList<>();
-                        temp.add(nums[i]);
-                        temp.add(complement);
-                        temp.add(nums[j]);
-                        Collections.sort(temp);
-                        set.add(temp);
+        int target = 0;
+        return new AbstractList<List<Integer>>() {
+            public List<Integer> get(int index) {
+                init();
+                return res.get(index);
+            }
+            public int size() {
+                init();
+                return res.size();
+            }
+            private void init() {
+                if (res != null) return;
+                Arrays.sort(nums);
+                int l, r;
+                int sum;
+                Set<List<Integer>> tempRes = new HashSet<>();
+                for(int i=0; i < nums.length - 2; ++i) {
+                    l = i+1;
+                    r = nums.length - 1;
+                    while(l < r) {
+                        sum = nums[i] + nums[l] + nums[r];
+                        if (sum == target) {
+                            List<Integer> t = new ArrayList<>();
+                            t.add(nums[i]);
+                            t.add(nums[l]);
+                            t.add(nums[r]);
+                            tempRes.add(t);
+                        }
+                        if (sum < target) ++l;
+                        else --r;
                     }
                 }
-                map.put(nums[j], j);
+                res = new ArrayList<List<Integer>>(tempRes);
             }
-        }
-        return new ArrayList<>(set);
+            
+        };
     }
 }
