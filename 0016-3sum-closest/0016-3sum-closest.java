@@ -17,7 +17,6 @@ class Solution {
                 if(Math.abs(target-finalSum)>Math.abs(target-sum)){
                     finalSum=sum;
                 }
-                sum=nums[i];
             }
         }
         return finalSum;
