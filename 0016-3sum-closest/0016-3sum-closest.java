@@ -11,7 +11,7 @@ class Solution {
                     return sum;
                 else if(sum>target){
                     right--;
-                }else if(target>sum){
+                }else{
                     left++;
                 }
                 if(Math.abs(target-finalSum)>Math.abs(target-sum)){
