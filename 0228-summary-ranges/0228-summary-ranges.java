@@ -1,9 +1,9 @@
 class Solution {
     public List<String> summaryRanges(int[] nums) {
         List<String> list = new ArrayList<>();
-        int n=nums.length;
-        if(n==0)
+        if(nums.length==0)
             return list;
+        int n=nums.length;
         int left = nums[0];
         int right =nums[0];
         for(int i=0;i<n;i++){
