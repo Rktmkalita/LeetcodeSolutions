@@ -19,25 +19,28 @@ class Solution {
             return String.valueOf(root.val);
         }
         StringBuilder sbr = new StringBuilder();
-        sbr.append(root.val);
-        if(root.left==null && root.right!=null){
-            sbr.append("()");
-        }
-        helper(root.left,sbr);
-        helper(root.right,sbr);
+        helper(root,sbr);
         return sbr.toString();
     }
     
     public void helper(TreeNode root, StringBuilder sbr){
-        if(root==null){
+        if (root==null) 
             return;
+        
+        if(root.left==null && root.right==null){
+           sbr.append(root.val);
+           return;
         }
-        sbr.append("("+root.val);
-        if(root.left==null && root.right!=null){
-            sbr.append("()");
-        }
+        sbr.append(root.val);
+        sbr.append('(');
         helper(root.left,sbr);
-        helper(root.right,sbr);
-        sbr.append(")");
+        sbr.append(')');
+  
+        if(root.right!=null){
+            sbr.append('(');
+            helper(root.right,sbr);
+            sbr.append(')');
+        } 
+        return; 
     }
 }
