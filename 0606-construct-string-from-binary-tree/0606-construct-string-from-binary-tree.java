@@ -31,6 +31,7 @@ class Solution {
            sbr.append(root.val);
            return;
         }
+        
         sbr.append(root.val);
         sbr.append('(');
         helper(root.left,sbr);
