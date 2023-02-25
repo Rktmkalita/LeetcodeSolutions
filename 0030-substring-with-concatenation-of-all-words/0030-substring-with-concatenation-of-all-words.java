@@ -9,15 +9,10 @@ class Solution {
             for(int j=0;j<=curr.length()-words[0].length();j+=words[0].length()){
                 String substr = curr.substring(j,j+words[0].length());
                 map.put(substr,map.getOrDefault(substr,0)+1);
-                // System.out.println(substr);
             }
-            // System.out.println();
             for(String str:words){
-                // System.out.println(map.get(str));
                 if(map.containsKey(str) && map.get(str)>0){
-                    // System.out.println(map.get(str));
                     map.put(str,map.get(str)-1);
-                    // System.out.println(map.get(str));
                 }else{
                     flag=false;
                     break;
