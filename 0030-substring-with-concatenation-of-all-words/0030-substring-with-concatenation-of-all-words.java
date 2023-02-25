@@ -7,7 +7,8 @@ class Solution {
             String curr = s.substring(i,i+len);
             Map<String,Integer> map = new HashMap<>();
             for(int j=0;j<=curr.length()-words[0].length();j+=words[0].length()){
-                map.put(curr.substring(j,j+words[0].length()),map.getOrDefault(curr.substring(j,j+words[0].length()),0)+1);
+                String substr = curr.substring(j,j+words[0].length());
+                map.put(substr,map.getOrDefault(substr,0)+1);
             }
             for(String str:words){
                 if(map.containsKey(str) && map.get(str)>0){
