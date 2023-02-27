@@ -1,22 +1,21 @@
 class Solution {
     public boolean canBeIncreasing(int[] nums) {
-        List<Integer> list = new ArrayList<>();
-        for(int i=0;i<nums.length;i++){
-            list.add(nums[i]);
-        }
-        for(int i=0;i<nums.length;i++){
-            int temp = list.get(i);
-            list.remove(i);
-            if(checkArr(list))
-                return true;
-            list.add(i,temp);
-        }
-        return false;
-    }
-    public boolean checkArr(List<Integer> list){
-        for(int i=1;i<list.size();i++){
-           if(list.get(i-1)>=list.get(i))
-               return false;
+        int count = 0;
+        for (int i = 1; i < nums.length; i++) 
+        {
+            if (nums[i] <= nums[i - 1])
+            {
+                // Check if nums[i] is not greater than the previous element
+                count++;
+                // Increment the count of elements that are not strictly increasing
+                if (count > 1) 
+                {
+                    // If more than one element needs to be removed, return false
+                    return false;
+                }
+                
+                nums[i] = (i > 1 && nums[i] <= nums[i - 2]) ? nums[i - 1] : nums[i];
+            }
         }
         return true;
     }
