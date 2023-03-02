@@ -5,12 +5,12 @@ class Solution {
         for(int i=0;i<k;i++){
             sum+=arr[i];
         }
-        if((float)sum/k>=threshold)
+        if(sum/k>=threshold)
             count++;
         for(int i=k;i<n;i++){
             sum+=arr[i];
             sum-=arr[i-k];
-            float avg = (float)(sum)/k;
+            float avg = sum/k;
             if(avg>=threshold)
                 count++;
         }
