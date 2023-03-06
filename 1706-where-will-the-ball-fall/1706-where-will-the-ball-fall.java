@@ -8,7 +8,7 @@ class Solution {
             boolean flag=true;
             while(l<m){
                 if(grid[l][r]==1){
-                    if((r<n-1 && grid[l][r+1]==-1) || r==n-1){
+                    if(r==n-1 || grid[l][r+1]==-1){
                         res[i]=-1;
                         flag=false;
                         break;
@@ -16,7 +16,7 @@ class Solution {
                     l++;
                     r++;
                 }else {
-                    if(r==0 || (r>0 && grid[l][r-1]==1)){
+                    if(r==0 || grid[l][r-1]==1){
                         res[i]=-1;
                         flag=false;
                         break;
