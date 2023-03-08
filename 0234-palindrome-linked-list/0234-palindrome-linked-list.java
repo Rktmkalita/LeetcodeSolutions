@@ -16,11 +16,13 @@ class Solution {
             head=head.next;
         }
         String str = sbr.toString();
-        String strrev = sbr.reverse().toString();
-        System.out.println(str+"  "+strrev);
-        if(str.equals(strrev))
-            return true;
-        else
-            return false;
+        int left = 0, right = str.length()-1;
+        while(left<right){
+            if(str.charAt(left)!=str.charAt(right))
+                return false;
+            left++;
+            right--;
+        }
+        return true;
     }
 }
